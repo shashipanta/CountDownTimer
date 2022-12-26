@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CountDown Timer</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <fieldset class="timer-input">
+      <legend>Timer Input</legend>
+      <label for="hour">Hour</label>
+      <input
+        type="number"
+        name="hour"
+        id="hourInput"
+        placeholder="Eg: 24"
+        min="0"
+      />
+      <label for="minute">Minutes</label>
+      <input
+        type="number"
+        name="minute"
+        id="minInput"
+        placeholder="Eg: 54"
+        min="0"
+        max="59"
+      />
+      <label for="second">Seconds</label>
+      <input
+        type="number"
+        name="second"
+        id="secInput"
+        placeholder="Eg: 34"
+        min="1"
+        max="59"
+      />
+      <button id="start">start timer</button>
+      <button id="stop">stop timer</button>
+    </fieldset>
+    <div class="time__container">
+      <!-- PNG -->
+      <img
+        src="./img/anya.png"
+        alt="image"
+        srcset=""
+        class="timer-img"
+        id="timerImg"
+      />
+      <span class="title title__hour">Hour</span>
+      <div class="time__container" id="hour">
+        <div class="digit__container" id="upper">
+          <span class="seg horizontal hor__top"></span>
+          <span class="seg t_left"></span>
+          <span class="seg t_right"></span>
+          <span class="seg horizontal mid"></span>
+          <span class="seg t_right flip up"></span>
+          <span class="seg t_left flip up"></span>
+          <span class="seg horizontal flip hor__bottom up"></span>
+        </div>
+        <div class="digit__container" id="lower">
+          <span class="seg horizontal hor__top"></span>
+          <span class="seg t_left"></span>
+          <span class="seg t_right"></span>
+          <span class="seg horizontal mid"></span>
+          <span class="seg t_right flip up"></span>
+          <span class="seg t_left flip up"></span>
+          <span class="seg horizontal flip hor__bottom up"></span>
+        </div>
+      </div>
+      <span class="title title__minutes">Minutes</span>
+      <div class="time__container" id="minutes">
+        <div class="digit__container" id="upper">
+          <span class="seg horizontal hor__top"></span>
+          <span class="seg t_left"></span>
+          <span class="seg t_right"></span>
+          <span class="seg horizontal mid"></span>
+          <span class="seg t_right flip up"></span>
+          <span class="seg t_left flip up"></span>
+          <span class="seg horizontal flip hor__bottom up"></span>
+        </div>
+        <div class="digit__container" id="lower">
+          <span class="seg horizontal hor__top"></span>
+          <span class="seg t_left"></span>
+          <span class="seg t_right"></span>
+          <span class="seg horizontal mid"></span>
+          <span class="seg t_right flip up"></span>
+          <span class="seg t_left flip up"></span>
+          <span class="seg horizontal flip hor__bottom up"></span>
+        </div>
+      </div>
+      <span class="title title__seconds">Seconds</span>
+      <div class="time__container" id="second">
+        <div class="digit__container" id="upper">
+          <span class="seg horizontal hor__top"></span>
+          <span class="seg t_left"></span>
+          <span class="seg t_right"></span>
+          <span class="seg horizontal mid"></span>
+          <span class="seg t_right flip up"></span>
+          <span class="seg t_left flip up"></span>
+          <span class="seg horizontal flip hor__bottom up"></span>
+        </div>
+        <div class="digit__container" id="lower">
+          <span class="seg horizontal hor__top"></span>
+          <span class="seg t_left"></span>
+          <span class="seg t_right"></span>
+          <span class="seg horizontal mid"></span>
+          <span class="seg t_right flip up"></span>
+          <span class="seg t_left flip up"></span>
+          <span class="seg horizontal flip hor__bottom up"></span>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="digit__container bottom">
+      <span class="seg b_left"></span>
+      <span class="seg b_right"></span>
+    </div> -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>

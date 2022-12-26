@@ -1,0 +1,33 @@
+
+/* style.css | http://127.0.0.1:5500/css/style.css */
+
+.horizontal {
+  /* width: 4em; */
+  width: 12em;
+  position: absolute;
+  background: green;
+  clip-path: polygon(65.63% 101.56%, 32.28% 101.56%, 2.6% 40.32%, 1.04% 0%, 86.45% 3.12%);
+  margin-bottom: 3em;
+  top: 4em;
+  border-top-left-radius: 2em;
+}
+
+.digit__container {
+  position: relative;
+  padding-top: 4em;
+}
+
+.seg.t_right {
+  /* clip-path: polygon(0 24%, 100% 0, 100% 100%, 0 75%); */
+  clip-path: polygon(0px 31.59%, 101.57% -34px, 100% 100%, 0px 75%);
+}
+
+.seg {
+  /* height: 10em; */
+  height: 14em;
+}
+
+.seg.t_left {
+  /* clip-path: polygon( 1px 8.38%, 148.44% 46px, 184.38% 61.25%, 43.75% 154px, 0px 80.62% ); */
+  clip-path: polygon(0% 13.74%, 100% 72px, 100% 165px, 60.73% 100.47%, 0px 83.30%);
+}

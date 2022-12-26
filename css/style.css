@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-active: white;
+  --clr-passive: rgba(239, 239, 239, 0.08);
+  --bg-active: #fd594d;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin-inline: 4em;
+}
+body > * {
+  margin-inline: auto;
+}
+
+.timer__container {
+  display: flex;
+  gap: 2em;
+}
+
+.container {
+  padding: 1em;
+  background: aquamarine;
+}
+
+.timer-input {
+  padding: 1em 2em;
+  border: #fd594d dashed 1px;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  background: #8ed189;
+  border: none;
+  box-sizing: border-box;
+}
+button:hover {
+  background: #fd594d;
+}
+
+.time__container {
+  display: flex;
+  gap: 1em;
+  transform: scale(0.8);
+}
+
+.digit__container {
+  color: white;
+  display: flex;
+  gap: 4em;
+  padding: 1em;
+  background: var(--bg-active);
+  position: relative;
+  width: 12em;
+  flex-wrap: wrap;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+}
+
+.title__hour {
+  left: 13em;
+}
+.title__minutes {
+  left: 47%;
+}
+
+.title__seconds {
+  right: 13em;
+}
+/*
+seg : particular segment
+horizontal: align horizontally
+*/
+.seg {
+  width: 4em;
+  height: 10em;
+  background: white;
+}
+.horizontal {
+  width: 12em;
+  height: 4em;
+  position: absolute;
+  background: green;
+}
+
+.hor__top {
+  background: green;
+  /* clip-path: polygon(
+    64.05% 99.99%,
+    32.43% 99.42%,
+    -50.01% -95.62%,
+    89.06% -48.44%
+  ); */
+  clip-path: polygon(63% 100%, 33.33% 100%, 0% 0%, 80% 0%);
+  clip-path: polygon(63% 100%, 33.33% 100%, 0% 20%, 0% 0%, 80% 0%);
+  /* margin-bottom: 3em; */
+  /* top: 4em; */
+  border-top-left-radius: 2em;
+}
+
+.mid {
+  clip-path: polygon(46.88% -19px, 83.45% 37.22%, 52.6% 129.68%, 34px 61.24%);
+  clip-path: polygon(
+    51.62% -42.18%,
+    41.65% -53.13%,
+    81% 39.5%,
+    47.38% 150%,
+    56.84% 146.88%,
+    18.96% 60.75%
+  );
+  background: #8ed189;
+  top: 8.5em;
+  /* display: none; */
+}
+.hor__bottom {
+  background: green;
+  clip-path: polygon(
+    64.05% 99.99%,
+    32.43% 99.42%,
+    -50.01% -95.62%,
+    89.06% -48.44%
+  );
+  top: 21em;
+  border-top-left-radius: 2em;
+}
+
+.seg.t_right {
+  clip-path: polygon(-20px 63.48%, 96.88% -54px, 100% 100%);
+  clip-path: polygon(0% 72%, 0% 41%, 51% 0%, 100% 0%, 100% 100%);
+  border-top-right-radius: 2em;
+}
+
+.seg.t_left {
+  clip-path: polygon(
+    0% 13.74%,
+    100% 72px,
+    132.82% 96px,
+    48.24% 96.25%,
+    0px 83.3%
+  );
+}
+.flip {
+  transform: rotateX(180deg) rotateY(180deg);
+}
+
+.up {
+  margin-top: -5em;
+}
+
+.timer__stops {
+  animation: blink 5s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #8ed189;
+  }
+  20% {
+    background-color: white;
+  }
+  40% {
+    background-color: #8ed189;
+  }
+  60% {
+    background-color: white;
+  }
+  80% {
+    background-color: #8ed189;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.timer-img {
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  top: 2em;
+  left: 4em;
+  transform: rotateZ(-40deg);
+  /* display: none; */
+}
+
+.reveal {
+  /* animation: sneaky 2s ease-in; */
+  animation: sneaky 2s ease-in-out;
+  display: block;
+}
+
+@keyframes sneaky {
+  0% {
+    top: -2em;
+    left: -4em;
+  }
+  10% {
+    top: 0em;
+    left: 0em;
+  }
+  40% {
+    top: -1em;
+    left: -2em;
+  }
+  50% {
+    top: -1em;
+    left: -2em;
+  }
+  80% {
+    top: -2em;
+    left: -4em;
+  }
+  90% {
+    top: -1em;
+    left: -3em;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
