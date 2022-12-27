@@ -6,7 +6,7 @@ let secElement = document.getElementById("second");
 let anyaImg = document.getElementById("timerImg");
 let countComplete = false;
 
-let timerInterval = 0;
+let timerInterval = null;
 
 let hourInput, minInput, secInput, totalSeconds;
 let seconds, hours, minutes;
@@ -27,12 +27,24 @@ let startTimer = (e) => {
   // else seconds = maxValue;
 
   // initialize the timer
-  timerInterval = setInterval(countDownTimer, 1000);
+  if (timerInterval == null) timerInterval = setInterval(countDownTimer, 1000);
+};
+
+let initialTimer = () => {
+  initializeDigits(0, hourElement);
+  initializeDigits(0, minElement);
+  initializeDigits(0, secElement);
 };
 
 let stopTimer = (e) => {
   console.log("timer stopped");
   clearInterval(timerInterval);
+  timerInterval = null;
+  timerStops(hourElement);
+  timerStops(minElement);
+  timerStops(secElement);
+
+  initialTimer();
 };
 
 let startTimerBtn = document.getElementById("start");
@@ -86,13 +98,15 @@ let timerStops = (htmlElement) => {
   htmlElemArr = Array.from(htmlElement.getElementsByClassName("seg"));
 
   for (let i = 0; i < htmlElemArr.length; i++) {
-    htmlElemArr[i].classList.add("timer__stops");
+    if (htmlElemArr[i].classList.contains("timer__stops")) {
+      htmlElemArr[i].classList.remove("timer__stops");
+      anyaImg.classList.remove("reveal");
+    } else {
+      htmlElemArr[i].classList.add("timer__stops");
+      anyaImg.classList.add("reveal");
+    }
   }
-
-  anyaImg.classList.add("reveal");
 };
-
-let hourMax = 24;
 
 let initializeDigits = (inputTime, htmlElement) => {
   console.log(`Input time ${inputTime}`);
@@ -122,10 +136,6 @@ let initializeDigits = (inputTime, htmlElement) => {
     generateNumber(upperDigit, elementUpper, "a");
   }
 };
-
-initializeDigits(0, hourElement);
-initializeDigits(0, minElement);
-initializeDigits(0, secElement);
 
 let clearCountDown = () => {
   timerStops(secElement);
@@ -164,7 +174,6 @@ let timer = () => {
 
 // setTimeout(timer, 1000);
 
-console.log(hours + " min " + minutes);
 let countDownTimer = () => {
   // if (seconds <= 0 && hours == 0 && minutes == 0) {
   //   console.log("timer completed");
@@ -206,3 +215,5 @@ let countDownTimer = () => {
   initializeDigits(minutes, minElement);
   initializeDigits(hours, hourElement);
 };
+
+initialTimer();
