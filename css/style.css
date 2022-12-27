@@ -194,7 +194,7 @@ horizontal: align horizontally
 
 .reveal {
   /* animation: sneaky 2s ease-in; */
-  animation: sneaky 2s ease-in-out;
+  animation: sneaky 4s ease-in-out infinite;
   display: block;
 }
 
